@@ -12,7 +12,33 @@
 		C2D4127A1DA8187800570191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D412781DA8187800570191 /* Main.storyboard */; };
 		C2D4127C1DA8187800570191 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D4127B1DA8187800570191 /* Assets.xcassets */; };
 		C2D4127F1DA8187800570191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D4127D1DA8187800570191 /* LaunchScreen.storyboard */; };
+		C2D4128D1DA8200700570191 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4128C1DA8200700570191 /* KeyboardViewController.swift */; };
+		C2D412911DA8200700570191 /* MyKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2D4128A1DA8200700570191 /* MyKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2D4128F1DA8200700570191 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2D412691DA8187700570191 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2D412891DA8200700570191;
+			remoteInfo = MyKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2D412951DA8200700570191 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C2D412911DA8200700570191 /* MyKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C2D412711DA8187800570191 /* MyCustomKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCustomKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +48,20 @@
 		C2D4127B1DA8187800570191 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2D4127E1DA8187800570191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2D412801DA8187800570191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D4128A1DA8200700570191 /* MyKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2D4128C1DA8200700570191 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		C2D4128E1DA8200700570191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C2D4126E1DA8187700570191 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2D412871DA8200700570191 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C2D412731DA8187800570191 /* MyCustomKeyboard */,
+				C2D4128B1DA8200700570191 /* MyKeyboard */,
 				C2D412721DA8187800570191 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C2D412711DA8187800570191 /* MyCustomKeyboard.app */,
+				C2D4128A1DA8200700570191 /* MyKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +102,15 @@
 			path = MyCustomKeyboard;
 			sourceTree = "<group>";
 		};
+		C2D4128B1DA8200700570191 /* MyKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C2D4128C1DA8200700570191 /* KeyboardViewController.swift */,
+				C2D4128E1DA8200700570191 /* Info.plist */,
+			);
+			path = MyKeyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,15 +121,34 @@
 				C2D4126D1DA8187700570191 /* Sources */,
 				C2D4126E1DA8187700570191 /* Frameworks */,
 				C2D4126F1DA8187700570191 /* Resources */,
+				C2D412951DA8200700570191 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C2D412901DA8200700570191 /* PBXTargetDependency */,
 			);
 			name = MyCustomKeyboard;
 			productName = MyCustomKeyboard;
 			productReference = C2D412711DA8187800570191 /* MyCustomKeyboard.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C2D412891DA8200700570191 /* MyKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2D412921DA8200700570191 /* Build configuration list for PBXNativeTarget "MyKeyboard" */;
+			buildPhases = (
+				C2D412861DA8200700570191 /* Sources */,
+				C2D412871DA8200700570191 /* Frameworks */,
+				C2D412881DA8200700570191 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyKeyboard;
+			productName = MyKeyboard;
+			productReference = C2D4128A1DA8200700570191 /* MyKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +161,11 @@
 				ORGANIZATIONNAME = exygy;
 				TargetAttributes = {
 					C2D412701DA8187700570191 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HLT4EP89K7;
+						ProvisioningStyle = Automatic;
+					};
+					C2D412891DA8200700570191 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = HLT4EP89K7;
 						ProvisioningStyle = Automatic;
@@ -115,6 +186,7 @@
 			projectRoot = "";
 			targets = (
 				C2D412701DA8187700570191 /* MyCustomKeyboard */,
+				C2D412891DA8200700570191 /* MyKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +202,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2D412881DA8200700570191 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -142,7 +221,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2D412861DA8200700570191 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2D4128D1DA8200700570191 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2D412901DA8200700570191 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2D412891DA8200700570191 /* MyKeyboard */;
+			targetProxy = C2D4128F1DA8200700570191 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C2D412781DA8187800570191 /* Main.storyboard */ = {
@@ -258,6 +353,7 @@
 		C2D412841DA8187800570191 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HLT4EP89K7;
 				INFOPLIST_FILE = MyCustomKeyboard/Info.plist;
@@ -271,12 +367,39 @@
 		C2D412851DA8187800570191 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HLT4EP89K7;
 				INFOPLIST_FILE = MyCustomKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C2D412931DA8200700570191 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HLT4EP89K7;
+				INFOPLIST_FILE = MyKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard.MyKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C2D412941DA8200700570191 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = HLT4EP89K7;
+				INFOPLIST_FILE = MyKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard.MyKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -298,6 +421,14 @@
 			buildConfigurations = (
 				C2D412841DA8187800570191 /* Debug */,
 				C2D412851DA8187800570191 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C2D412921DA8200700570191 /* Build configuration list for PBXNativeTarget "MyKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2D412931DA8200700570191 /* Debug */,
+				C2D412941DA8200700570191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
