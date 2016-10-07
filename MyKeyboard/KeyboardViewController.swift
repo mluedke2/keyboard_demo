@@ -12,6 +12,8 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
+    var touchDownTime: NSDate?
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
@@ -48,6 +50,14 @@ class KeyboardViewController: UIInputViewController {
         
         addConstraints(buttons: buttons, containingView: topRow)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let parentViewController = self.parent {
+            let hostBundleID = parentViewController.value(forKey: "_hostBundleID")
+            print(hostBundleID)
+        }
+    }
   
     func createButtons(titles: [String]) -> [UIButton] {
         
@@ -59,17 +69,25 @@ class KeyboardViewController: UIInputViewController {
             button.translatesAutoresizingMaskIntoConstraints = false
             button.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
             button.setTitleColor(UIColor.darkGray, for: .normal)
-            button.addTarget(self, action: #selector(KeyboardViewController.keyPressed(sender:)), for: .touchUpInside)
+            button.addTarget(self, action: #selector(KeyboardViewController.iDontBelieveInTouchdowns(button:)), for: .touchDown)
+            button.addTarget(self, action: #selector(KeyboardViewController.keyPressed(button:)), for: .touchUpInside)
             buttons.append(button)
         }
         
         return buttons
     }
     
-    func keyPressed(sender: AnyObject?) {
-        let button = sender as! UIButton
+    func iDontBelieveInTouchdowns(button: UIButton) {
         let title = button.title(for: .normal)
         (textDocumentProxy as UIKeyInput).insertText(title!)
+        touchDownTime = NSDate()
+    }
+    
+    func keyPressed(button: UIButton) {
+        let title = button.title(for: .normal)
+        (textDocumentProxy as UIKeyInput).insertText(title!)
+        print(-touchDownTime!.timeIntervalSinceNow)
+        touchDownTime = nil
     }
     
     func addConstraints(buttons: [UIButton], containingView: UIView){

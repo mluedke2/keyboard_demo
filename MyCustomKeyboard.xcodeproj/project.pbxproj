@@ -162,12 +162,12 @@
 				TargetAttributes = {
 					C2D412701DA8187700570191 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HLT4EP89K7;
+						DevelopmentTeam = B3P48T2JW7;
 						ProvisioningStyle = Automatic;
 					};
 					C2D412891DA8200700570191 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HLT4EP89K7;
+						DevelopmentTeam = B3P48T2JW7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -355,7 +355,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HLT4EP89K7;
+				DEVELOPMENT_TEAM = B3P48T2JW7;
 				INFOPLIST_FILE = MyCustomKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard;
@@ -369,7 +369,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HLT4EP89K7;
+				DEVELOPMENT_TEAM = B3P48T2JW7;
 				INFOPLIST_FILE = MyCustomKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard;
@@ -381,7 +381,7 @@
 		C2D412931DA8200700570191 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = HLT4EP89K7;
+				DEVELOPMENT_TEAM = B3P48T2JW7;
 				INFOPLIST_FILE = MyKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard.MyKeyboard;
@@ -394,7 +394,7 @@
 		C2D412941DA8200700570191 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = HLT4EP89K7;
+				DEVELOPMENT_TEAM = B3P48T2JW7;
 				INFOPLIST_FILE = MyKeyboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.exygy.MyCustomKeyboard.MyKeyboard;
@@ -423,6 +423,7 @@
 				C2D412851DA8187800570191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2D412921DA8200700570191 /* Build configuration list for PBXNativeTarget "MyKeyboard" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +432,7 @@
 				C2D412941DA8200700570191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
