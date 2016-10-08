@@ -14,6 +14,7 @@
 		C2D4127F1DA8187800570191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D4127D1DA8187800570191 /* LaunchScreen.storyboard */; };
 		C2D4128D1DA8200700570191 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4128C1DA8200700570191 /* KeyboardViewController.swift */; };
 		C2D412911DA8200700570191 /* MyKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2D4128A1DA8200700570191 /* MyKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C2D412981DA8656E00570191 /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D412971DA8656E00570191 /* ForceTouchGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C2D4128A1DA8200700570191 /* MyKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D4128C1DA8200700570191 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		C2D4128E1DA8200700570191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D412971DA8656E00570191 /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				C2D4128C1DA8200700570191 /* KeyboardViewController.swift */,
 				C2D4128E1DA8200700570191 /* Info.plist */,
+				C2D412971DA8656E00570191 /* ForceTouchGestureRecognizer.swift */,
 			);
 			path = MyKeyboard;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D4128D1DA8200700570191 /* KeyboardViewController.swift in Sources */,
+				C2D412981DA8656E00570191 /* ForceTouchGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

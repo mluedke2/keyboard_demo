@@ -12,8 +12,6 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     
-    var touchDownTime: NSDate?
-    
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
@@ -59,38 +57,40 @@ class KeyboardViewController: UIInputViewController {
         }
     }
   
-    func createButtons(titles: [String]) -> [UIButton] {
+    func createButtons(titles: [String]) -> [UILabel] {
         
-        var buttons = [UIButton]()
+        var buttons = [UILabel]()
         
         for title in titles {
-            let button = UIButton(type: .system)
-            button.setTitle(title, for: .normal)
+            let button = UILabel()
+            button.text = title
             button.translatesAutoresizingMaskIntoConstraints = false
             button.backgroundColor = UIColor(white: 1.0, alpha: 1.0)
-            button.setTitleColor(UIColor.darkGray, for: .normal)
-            button.addTarget(self, action: #selector(KeyboardViewController.iDontBelieveInTouchdowns(button:)), for: .touchDown)
-            button.addTarget(self, action: #selector(KeyboardViewController.keyPressed(button:)), for: .touchUpInside)
+            button.textColor = UIColor.darkGray
+            button.isUserInteractionEnabled = true
+            
+            
+            let forceTouchGesture = ForceTouchGestureRecognizer(target: self, action: #selector(KeyboardViewController.keyPressed(recognizer:)))
+            forceTouchGesture.text = title
+            forceTouchGesture.minimumValue = 0.1
+            forceTouchGesture.tolerance = 0.2
+            button.addGestureRecognizer(forceTouchGesture)
             buttons.append(button)
         }
         
         return buttons
     }
     
-    func iDontBelieveInTouchdowns(button: UIButton) {
-        let title = button.title(for: .normal)
-        (textDocumentProxy as UIKeyInput).insertText(title!)
-        touchDownTime = NSDate()
+    func keyPressed(recognizer: ForceTouchGestureRecognizer) {
+        // needed to actually use text input in app
+//        (textDocumentProxy as UIKeyInput).insertText(title!)
+        
+        if let title = recognizer.text, let force = recognizer.forceValue {
+            print("force on letter \(title): \(force)")  // force is CGFloat between 0 & 1
+        }
     }
     
-    func keyPressed(button: UIButton) {
-        let title = button.title(for: .normal)
-        (textDocumentProxy as UIKeyInput).insertText(title!)
-        print(-touchDownTime!.timeIntervalSinceNow)
-        touchDownTime = nil
-    }
-    
-    func addConstraints(buttons: [UIButton], containingView: UIView){
+    func addConstraints(buttons: [UILabel], containingView: UIView){
         
         for (index, button) in buttons.enumerated() {
             
@@ -126,11 +126,6 @@ class KeyboardViewController: UIInputViewController {
             
             containingView.addConstraints([topConstraint, bottomConstraint, rightConstraint, leftConstraint])
         }
-    }
-  
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated
     }
     
     override func textWillChange(_ textInput: UITextInput?) {
